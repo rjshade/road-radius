@@ -1,5 +1,4 @@
 var oxford = new google.maps.LatLng(51.7573795, -1.2463022);
-var random = new google.maps.LatLng(31.7573795, -9.2463022);
 var map;
 var directionsService;
 var gRoutes    = new Array(); // store google.maps.DirectionRoute objects
@@ -12,7 +11,7 @@ function initialize()
 {
     var mapOptions = {
             zoom: 9, //required
-            center: random, //required
+            center: oxford, //required
             mapTypeId: google.maps.MapTypeId.ROADMAP //required
     };
 
