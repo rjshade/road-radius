@@ -4,6 +4,7 @@ var directionsService;
 var gRoutes    = new Array(); // store google.maps.DirectionRoute objects
 var gPolylines = new Array(); // store polyline overlays
 var gMarkers   = new Array(); // store marker overlays
+var searchRadius = 50; // in kilometers...
 
 // Try to geolocate to center initial map... if geolocation fails
 // then we default to centering on Oxford, England
@@ -134,7 +135,6 @@ function startHere(location)
     });
     gMarkers.push(marker);
 
-    var searchRadius = 50; //km
     findRadiusRoutes( location, searchRadius * 1000, 30);
 }
 
