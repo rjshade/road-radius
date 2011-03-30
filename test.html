@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation Demo</title>
+  </head>
+  <body>
+    <h1>Geolocation Demo</h1>
+    <p>Latitude: <span id="lat">0.00</span> Longitude: <span id="lon">0.00</span></p>
+    <p><a id="gmaps_link" href="http://maps.google.co.uk/" target="_blank">View on Google Maps</a></p>
+ 
+    <script language="javascript">
+       // show the position on the page and make a google maps link
+       function showPosition(position) {
+         var lat = position.coords.latitude;
+         var lon = position.coords.longitude;
+         document.getElementById("lat").innerHTML = lat;
+         document.getElementById("lon").innerHTML = lon;
+         var gmaps_url = "http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=" + lat + "+" + lon;
+         document.getElementById("gmaps_link").href = gmaps_url;
+       }
+       // report errors to user
+       function errorHandler(error) {
+         switch (error.code) { 
+           case error.PERMISSION_DENIED:
+             alert("Could not get position as permission was denied.");
+             break;
+           case error.POSITION_UNAVAILABLE:
+             alert("Could not get position as this information is not available at this time.");
+             break;
+           case error.TIMEOUT:
+             alert("Attempt to get position timed out.");
+             break;
+           default:
+             alert("Sorry, an error occurred. Code: " + error.code + " Message: " + error.message);
+             break;              
+           }
+       }
+       // check browser can support geolocation, if so get the current position
+       if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(showPosition, errorHandler);
+       }
+       else {
+         alert("Sorry, your browser does not support geolocation services.");
+       }
+    </script>
+  </body>
+</html>
