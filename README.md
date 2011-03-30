@@ -8,6 +8,5 @@ Future goal: Road trip planner. Given a start lat/lng, end lat/lng, daily distan
 
 Demo
 ====
-
 http://rjshade.com/projects/roadradius/
 
