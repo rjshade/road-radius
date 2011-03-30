@@ -1,0 +1,5 @@
+Experimenting with the Google Maps API...
+
+Given a starting position and a route length, I want to find a set of destinations (and routes to those destinations). Not quite as simple as finding the routes to points on a circle centred on the starting position, as these will almost always be longer in length than the radius (special case is perfectly straight road from origin to circumference).
+
+Future goal: Road trip planner. Given a start lat/lng, end lat/lng, daily distance, and number of days in which to complete the journey: find an interesting route conecting start and end.
