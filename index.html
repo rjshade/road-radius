@@ -1,23 +1,105 @@
+
+ 
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <title>roadradius.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- for facebook open graph -->
+    <meta property="og:image" content="http://www.roadradius.com/site_screenshot.png"/> 
+    <meta property="og:title" content="roadradius.com"/> 
+    <meta property="og:url" content="http://www.roadradius.com"/> 
+    <meta property="og:type" content="website"/> 
+    <meta property="fb:admins" content="36804805"/>
+    <meta property="og:description"
+              content="Plan a trip of X miles from your current location" />
+
+
+    <!--<link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>-->
+   <link rel="stylesheet" type="text/css" media="screen" title="User Defined Style" href="./roadradius.css" /> 
+
+    <!-- note that the /1/ in the url links to the latest version -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-        html { height: 100% }
-        body { height: 100%; margin: 0px; padding: 0px }
-        #map_canvas { height: 100% }
-    </style>
 
     <script type="text/javascript"
         src="http://maps.google.com/maps/api/js?sensor=true">
     </script>
 
     <script type="text/javascript"
-        src="./RoadRadius.js">
+        src="./js/roadradius.js">
+
+    </script>
+
+    <script type='text/javascript'>
+        var fullscreen = false;
+        $(document).ready(function(){
+            $('#size_toggle').click(function()
+                {
+                    fullscreen = !fullscreen;
+                    $('#content').toggleClass('fullscreen');
+                    $('#blank').toggleClass('fullscreen');
+                    $('#map_canvas').toggleClass('fullscreen');
+                    if( fullscreen )
+                    {
+                        $('#content').css('height',0.85*$(document).height() + 'px');
+                        $('#size_toggle').html('smaller view');
+                    }
+                    else
+                    {
+                        $('#content').css('height','600px');
+                        $('#size_toggle').html('larger view');
+                    }
+
+                    google.maps.event.trigger(map, "resize");
+                });
+        });
     </script>
 </head>
 
 <body>
-    <div id="map_canvas" style="width:100%; height:100%"></div>
+    <div id="wrapper">
+        <div id="blank"></div>
+        <div id="content">
+            <div id="question">
+                how far are you going?
+                <input id='distance_input' type="text" value="50" />km 
+            </div>
+
+            <div id="map_canvas"></div>
+
+            <div id="size_toggle">
+                larger view
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <!-- Place this tag where you want the +1 button to render -->
+        <div class="gplusone">
+            <g:plusone size="medium" href="http://www.roadradius.com/"></g:plusone>
+        </div>
+        <div class="fblike">
+            <iframe src="http://www.facebook.com/plugins/like.php?app_id=172611732809983&amp;href=http%3A%2F%2Fwww.roadradius.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+        </div>
+
+        <!-- Place this tag after the last plusone tag -->
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+
+        <div class="credit">
+            <a href="http://www.roadradius.com/">roadradius.com</a> by <a href="http://www.rjshade.com/">Robbie Shade</a></div>
+        </div>
+    </div>
 </body>
 </html>

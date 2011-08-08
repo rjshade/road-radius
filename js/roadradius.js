@@ -135,6 +135,7 @@ function startHere(location)
     });
     gMarkers.push(marker);
 
+    searchRadius = parseInt( $('#distance_input').val() );
     findRadiusRoutes( location, searchRadius * 1000, 30);
 }
 
