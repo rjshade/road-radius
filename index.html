@@ -39,25 +39,28 @@
     <script type='text/javascript'>
         var fullscreen = false;
         $(document).ready(function(){
-            $('#size_toggle').click(function()
-                {
-                    fullscreen = !fullscreen;
-                    $('#content').toggleClass('fullscreen');
-                    $('#blank').toggleClass('fullscreen');
-                    $('#map_canvas').toggleClass('fullscreen');
-                    if( fullscreen )
-                    {
-                        $('#content').css('height',0.85*$(document).height() + 'px');
-                        $('#size_toggle').html('smaller view');
-                    }
-                    else
-                    {
-                        $('#content').css('height','600px');
-                        $('#size_toggle').html('larger view');
-                    }
+            //$('#size_toggle').click(function()
+            //    {
+            //        fullscreen = !fullscreen;
+            //        $('#content').toggleClass('fullscreen');
+            //        $('#blank').toggleClass('fullscreen');
+            //        $('#map_canvas').toggleClass('fullscreen');
+            //        if( fullscreen )
+            //        {
+            //            <!--$('#content').css('height',0.85*$(document).height() + 'px');-->
+            //            $('#content').css('height',$('#wrapper').height() - 32);
+            //            $('#content').css('padding-top','0px');
+            //            $('#content').css('padding-bottom','0px');
+            //            $('#size_toggle').html('smaller view');
+            //        }
+            //        else
+            //        {
+            //            $('#content').css('height','600px');
+            //            $('#size_toggle').html('larger view');
+            //        }
 
-                    google.maps.event.trigger(map, "resize");
-                });
+            //        google.maps.event.trigger(map, "resize");
+            //    });
         });
     </script>
 </head>
@@ -66,16 +69,16 @@
     <div id="wrapper">
         <div id="blank"></div>
         <div id="content">
-            <div id="question">
-                how far are you going?
-                <input id='distance_input' type="text" value="50" />km 
+            <div id="input">
+                <div id="question">
+                    I want to travel
+                    <input id='distance_input' type="text" value="50" />km 
+                </div>
+                <!--<div id="size_toggle">-->
+                    <!--larger view-->
+                <!--</div>-->
             </div>
-
             <div id="map_canvas"></div>
-
-            <div id="size_toggle">
-                larger view
-            </div>
         </div>
     </div>
 
