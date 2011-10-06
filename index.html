@@ -1,9 +1,5 @@
-
- 
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <title>roadradius.com</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -83,23 +79,16 @@
     </div>
 
     <div id="footer">
-        <!-- Place this tag where you want the +1 button to render -->
-        <div class="gplusone">
-            <g:plusone size="medium" href="http://www.roadradius.com/"></g:plusone>
-        </div>
-        <div class="fblike">
-            <iframe src="http://www.facebook.com/plugins/like.php?app_id=172611732809983&amp;href=http%3A%2F%2Fwww.roadradius.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
-        </div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-        <!-- Place this tag after the last plusone tag -->
-        <script type="text/javascript">
-          (function() {
-            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-            po.src = 'https://apis.google.com/js/plusone.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-          })();
-        </script>
-
+<fb:like href="http://www.roadradius.com/" send="true" width="450" show_faces="true"></fb:like>
         <div class="credit">
             <a href="http://www.roadradius.com/">roadradius.com</a> by <a href="http://www.rjshade.com/">Robbie Shade</a></div>
         </div>
