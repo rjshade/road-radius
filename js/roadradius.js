@@ -76,6 +76,17 @@ function addNewRoute( origin, distance, heading )
                                                map: map });
 
                                 gPolylines.push( routePolyline );
+
+                                
+                                // add markers at the ends of all routes
+                                var endLocation = route.overview_path[route.overview_path.length - 1]
+                                marker = new google.maps.Marker({
+                                         position: endLocation,
+                                         map: map
+                                });
+                                // markers can be clicked to spawn new route finding
+                                google.maps.event.addListener(marker, 'click', function(){ startHere( endLocation ) } )
+                                gMarkers.push(marker);
                              } 
                              else 
                              {
@@ -136,7 +147,7 @@ function startHere(location)
     gMarkers.push(marker);
 
     searchRadius = parseInt( $('#distance_input').val() );
-    findRadiusRoutes( location, searchRadius * 1000, 30);
+    findRadiusRoutes( location, searchRadius * 1000, 10);
 }
 
 // gets everything going once the page has loaded...
