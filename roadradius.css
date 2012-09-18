@@ -54,7 +54,7 @@ body {
     border-radius: 3px;
 }
 
-#distance_input {
+#distance-input {
     width: 2em;
     margin-left: 10px;
     margin-right: 20px;
@@ -80,3 +80,4 @@ body {
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
+
